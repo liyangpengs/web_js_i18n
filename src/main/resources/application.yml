@@ -1,0 +1,11 @@
+#服务端口
+server:
+  port: 8000
+
+spring:
+  application:
+    #配置serverID
+    name: liyangpeng
+    #取消thymeleaf的严格h5校验规则
+  thymeleaf:
+    mode: LEGACYHTML5

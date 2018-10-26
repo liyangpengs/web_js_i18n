@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>李阳鹏大SB</title>
+</head>
+<body>
+
+<span class="i18n" i18n="cureentLanguage"></span>:
+<select class="selectLanguage">
+    <!-- 属性内部放入需要国际化的配置文件-->
+    <option class="zh" value="Zh-cn.json">中文</option>
+    <option class="en" value="en.json">English</option>
+</select>
+<br/>
+<p class="i18n" i18n="name"></p>
+<p class="i18n" i18n="age"></p>
+<p class="i18n" i18n="motto"></p>
+<br/>
+<input class="i18n" i18n="placeholder">
+
+</body>
+<!--引入jq -->
+<!-- 所有的操作均依赖jquery-->
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- 引入i18n资源加载工具 -->
+<script src="/LoadI18N.js"></script>
+
+<script type="text/javascript">
+    //页面加载事件
+    //使用方法：
+    //   1.所有用到国际化的地方均要使用class="i18n"
+    //   2.设置i18n属性=国际化配置json文件属性里面的key
+    //   3.其他h5标签使用到i18n的地方均可以自由适配
+    //   4.所有的操作均是无侵入式的操作
+    //   5.页面庞大 需要i18n地方很多的情况下 推荐设置一门默认语言 语言选择过一次后再流浪器会保留一丝丝缓存 加载速度略微提升
+    $(function () {
+        //语言选择事件
+        $(".selectLanguage").change(function(){
+            loadJS($(this).val())
+        })
+    })
+</script>
+</html>
